@@ -1,0 +1,117 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+<! DOCTYPE html>
+<html lang="pt-BR">
+<cabeça>
+ <carretes de metáforos= "UTF-8">
+ <meta nome= "Visualização" Conteúdo="largura = largura do dispositivo, escala inicial = 1,0">
+ <título>Linha do tempo</título> 
+ <estilo> 
+ Corpo {
+  Fonte-Família :  Arial, sem serif;
+  Margem :  0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #101010;
+        }
+        header img {
+            width: 150px;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 20px 0;
+        }
+        .card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #101010;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Time Line Project">
+    <h1>Time Line Project</h1>
+</header>
+
+<div class="container">
+    <section>
+         <h2>Como Surgimos?</h2> 
+        <div class="card">
+             <p>Seis amigos visionários, apaixonados por ciência e exploração, criaram o Time Line Project, uma experiência única que torna possível viajar no tempo. Transformamos o impossível em realidade.</p> 
+        </div>
+    </section>
+
+    <section>
+         <h2>Adquira sua Experiência Temporal</h2> 
+         <p>Escolha uma data histórica ou futura e embarque em uma aventura inesquecível. 
